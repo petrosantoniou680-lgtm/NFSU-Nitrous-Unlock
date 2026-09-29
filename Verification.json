@@ -1,0 +1,33 @@
+{
+  "checks": [
+    "Startup stub enables the verified unlock flag and preserves all general registers",
+    "Emulated actual x86 nitrous getter, activation, release, and expiry: supply stays full while input activation/release still work",
+    "No nitrous granted to a car without an equipped supply; idle NOS remains inactive",
+    "All three inline effects expiry checks keep nitrous active during a long boost",
+    "Cumulative-use cap skips the block that would clear the supply",
+    "Installer applies both features, switches each independently, and restores a byte-identical original with verified backup",
+    "Unexpected executable modifications are rejected without overwriting the file",
+    "Installed game remained unchanged throughout workspace tests"
+  ],
+  "emulation": {
+    "original": {
+      "remaining": 6.000000476837158,
+      "after_release": 6.0,
+      "after_activation": 4.0,
+      "active": 1,
+      "timer_cleared": true,
+      "long_active": 0
+    },
+    "modified": {
+      "remaining": 10.0,
+      "after_release": 10.0,
+      "after_activation": 10.0,
+      "active": 1,
+      "timer_cleared": true,
+      "long_active": 1
+    }
+  },
+  "original_sha256": "8234B86F0BCABB9854CE89E7DF52534787D923080BA34791C79E6F5040920EA8",
+  "modified_sha256": "68A971753B8D7612C9AD10FA62D69FE1A5BBB5E001026C1EB3185F1BC6F66F6B",
+  "limitation": "Machine-code emulation and installer tests passed. Not yet tested in a running race or garage."
+}
